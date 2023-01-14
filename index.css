@@ -1,271 +1,52 @@
 @font-face {
-  font-family: 'Octarine-Bold';
-  src: url(fonts/Octarine-Bold.otf)
-}
-
-@font-face {
-  font-family: 'SFUIText-Light';
-  src: url(fonts/SFUIText-Light.otf);
-}
-
-@font-face {
-  font-family: 'SFUIText-Medium';
-  src: url(fonts/SFUIText-Medium.otf);
+  font-family: "Octarine-Bold";
+  src: url(fonts/Octarine-Bold.otf);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Octarine-Bold';
   overflow: hidden;
+  font-family: "Octarine-Bold";
   background-color: black;
-}
-
-#container {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("images/workspace.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: fadeIn 3s forwards;
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
-.blur {
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(20px);
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#background {
+img {
+  width: 390px;
+}
+
+a {
   position: absolute;
-  background-image: url("images/workspace.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 80%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#next {
-  position: absolute;
-  top: 45%;
-  right: 3%;
-  width: 100px;
-  height: 100px;
-  background-image: url("images/arrow.png");
-  background-size: cover;
-}
-
-#next:hover {
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
+  top: 26.2%;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
-  
+}
+
+a:hover {
+  box-shadow: 0px 0px 200px 20px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
 h1 {
-  position: absolute;
-  top: 70%;
-  left: 3%;
-  font-size: 90px;
+  position: relative;
+  bottom: 100px;
   color: white;
-  animation: slideDown 2s ease-in-out;
-}
-
-@keyframes slideDown {
-  from {
-      opacity: 0;
-      transform: translateY(-50%);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0%);
-      
-  }
-}
-
-/* 조명 */
-
-.light {
-  position: absolute;
-  top: 19%;
-  left: 47.7%;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.light:hover {
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-
-/* 노트북 버튼 */
-
-.laptopBtn_open {
-  position: absolute;
-  top: 45%;
-  left: 33%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.laptopBtn_open:hover {
-  box-shadow: 0px 0px 12px 5px rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-.close {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  color: white;
-  cursor: pointer;
-}
-
-
-/* 노트북 버튼 실행 */
-#laptop {
-  display: none;
-}
-
-#laptop:checked ~ .laptop_wrapper {
-  visibility: visible;
-  z-index: 1;
-  animation: slideIn 1.5s ease-in-out;
-}
-
-
-@keyframes slideIn {
-  from {
-      opacity: 0;
-      transform: translateY(100%);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0%);
-      
-  }
-}
-
-
-/* 노트북 화면 */
-
-.laptop_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color:rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-}
-
-.laptop_wrapper img {
-  position: absolute;
-  width: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-iframe {
-  position: absolute;
-  top: 57%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 62%;
-  height: 81%;
-  z-index: 1;
-}
-
-
-/* 폰 버튼 */
-
-.phoneBtn_open {
-  position: absolute;
-  top: 80%;
-  left: 56%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.phoneBtn_open:hover {
-  box-shadow: 0px 0px 12px 5px rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-/* 폰 버튼 실행 */
-
-#phone {
-  display: none;
-}
-
-#phone:checked ~ .phone_wrapper {
-  visibility: visible;
-  z-index: 1;
-  animation: slideIn 1.5s ease-in-out;
-}
-
-
-@keyframes slideIn {
-  from {
-      opacity: 0;
-      transform: translateY(100%);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0%);
-      
-  }
-}
-
-
-/* 폰 화면 */
-
-.phone_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color:rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  text-align: center;
-}
-
-.phone_background {
-  position: absolute;
-  top: 40%;
-  left: 41%;
-  width: 300px;
-  height: 500px;
-  text-align: center;
-}
-
-/* 날짜 */
-
-.time {
   font-size: 90px;
-  font-family: 'SFUIText-Light';
-  vertical-align: middle;
-}
-
-.today {
-  font-size: 28px;
-  font-family: 'SFUIText-Medium';
 }

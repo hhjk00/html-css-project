@@ -1,67 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workroom</title>
-    <link rel="stylesheet" href="index.css" type="text/css" />
-  </head>
-  <body>
-    <div id="container">
-      <div class="blur"></div>
-      <div id="background">
-        <h1>My<br>Workroom.</h1>
-      </div>
-      
-      <a class="light" href="hello.html"></a>
-      <input type="checkbox" id="laptop"/>
-      <label class="laptopBtn_open" for="laptop"></label>
-      <input type="checkbox" id="phone"/>
-      <label class="phoneBtn_open" for="phone"></label>
-      <a id="next" href="window.html"></a>
-
-      <div class="laptop_wrapper">
-        <label class="close" for="laptop">X</label>
-        <img src="images/laptop.png">
-        <iframe src="https://www.daum.net"></iframe>
-      </div>
-
-      <div class="phone_wrapper">
-        <label class="close" for="phone">X</label>
-        <img src="images/phone.png">
-        <div class="phone_background">
-          <div class="time">
-            <span id="hour"></span><span id="min"></span>
-          </div>
-          <div class="today">
-            <span id="month"></span>
-            <span id="date"></span>
-            <span id="week"></span>
-          </div>
-        </div>
-      </div>
-
-        <script>
-          var today = new Date();
-          var hours = today.getHours();
-          hours = hours % 12;
-          hours = hours ? hours : 12; // the hour '0' should be '12'
-          var minutes = today.getMinutes();
-          minutes = minutes < 10 ? '0'+minutes : minutes;
-          var month = today.getMonth() + 1;
-          var date = today.getDate();
-          var week=["일","월", "화","수","목","금","토"];
-
-          document.getElementById('hour').innerHTML = hours + ":";
-          document.getElementById('min').innerHTML = minutes;
-          document.getElementById('month').innerHTML = month + "월 ";
-          document.getElementById('date').innerHTML = date + "일 "
-          document.getElementById('week').innerHTML = week[today.getDay()] + "요일";
-
-        </script>
-
-      </div>
-  </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workroom</title>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+    <div id="wrapper">
+      <img src="images/bulb.jpg">
+      <a href="main.html"></a>
+      <h1>Hello</h1>
+    </div>
+</body>
 </html>
